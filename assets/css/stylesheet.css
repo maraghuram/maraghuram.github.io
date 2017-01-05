@@ -1,0 +1,34 @@
+.cv-points {
+    display: block;
+}
+
+.cv-points:before {
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #000000;
+}
+
+.college {
+    display: block;
+}
+
+.college:before {
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e233";
+    font-family: 'Glyphicons Halflings';
+    font-size: 18px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+	margin-right: 10px;
+    color: #000000;
+}
+
+.nostyle {
+	color: #FFFFFF;
+}
