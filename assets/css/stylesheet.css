@@ -32,3 +32,8 @@
 .nostyle {
 	color: #FFFFFF;
 }
+
+.spacedList {
+    margin-top: 5px;
+    padding-top: 10px;
+}
