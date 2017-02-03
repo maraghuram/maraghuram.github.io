@@ -40,31 +40,27 @@
             <hr>
             <p>The
               <a href="http://playframework.com/">Play Framework</a>is an open source lightweight framework for developing
-              <strong>Java</strong>and
-              <strong>Scala</strong>web applications based on the Model View Controller (MVC)
+              <strong> Java </strong>and
+              <strong> Scala </strong>web applications based on the Model View Controller (MVC)
               architecture. It was created by Guillaume Bort while working at Zenexity
               and the intial release of Play, 1.0 was released in 2007. After a complete
               re-write of Play APIs to Scala, Play 2.0 was released in 2012 in conjuction
               with
-              <a href="http://typesafe.com/">Typesafe</a>stack. Currently, Typesafe provides
+              <a href="http://typesafe.com/"> Typesafe </a>stack. Currently, Typesafe provides
               <a href="https://www.typesafe.com/community/core-projects/play-framework">commercial
-						support</a>for the stable version of Play which is Play 2.4.3.</p>
+						support </a>for the stable version of Play which is Play 2.4.3.</p>
             <p>Play follows a stateless, multi-threaded, fully asynchronous web architecture
               which enables high-scalability for web applications. It is also developer
               friendly - supports hot deployment(hit refresh workflow), easy error handling,
               built-in testing, integration with IDE eclipse/idea. Play also supports
-              <a href="https://en.wikipedia.org/wiki/Type_safety">Type safety</a>as Scala and Java are inherently type safe languages. Another
+              <a href="https://en.wikipedia.org/wiki/Type_safety"> Type safety </a>as Scala and Java are inherently type safe languages. Another
                 important aspect of Play, that is not often emphasized on, is that you
                 can also develop
                 <a href="http://www.reactivemanifesto.org/">Reactive
-						web applications</a>using Play.</p>
-            <p></p>
-            <hr>
-            <p>
-              <strong></strong>
-            </p>
+						web applications </a>using Play.</p>
+
             <h4>
-              <strong>Core Components</strong>
+              Core Components
             </h4>
             <ul class="fa-ul">
               <li>
@@ -85,12 +81,7 @@
 							Templating Engine</a>
               </li>
             </ul>
-            <p></p>
-            <hr>
-            <strong>
-              <h4>Play Advantages</h4>
-            </strong>
-            <p></p>
+            <h4>Play Advantages</h4>
             <ul class="fa-ul">
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Play is stateless (and so is the Web). This means that the framework
@@ -98,13 +89,8 @@
                 its fully asynchronous capabilities, Play can scale predictably for large
                 applications. If the application requires information persistence, then
                 it should make use of a database or use cookies or a memory-cache.
-                <br>This feature is brought around nicely by Peter Hilton in
-                <a href="http://blog.lunatech.com/2012/03/22/jfokus-2012-playframework-video">this
-							video</a>where he talks about
-                <em>not</em>breaking the first two buttons in a browser - the reload and back
-                buttons, by handling them explicitly in stateful frameworks like Spring
-                MVC.
-                <br>
+
+                <br>"Don't break the first two buttons in a browser"- Reload and Back buttons<a href="http://blog.lunatech.com/2012/03/22/jfokus-2012-playframework-video"> (Peter Hilton) </a>
               </li>
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Positive developer experience by simplifying some of the most common
@@ -131,29 +117,24 @@
                     <i class="fa-li fa -square -square fa-minus"></i>Easy integration with Eclipse/Idea, and a bunch of other modules that
                     can be found on the
                     <a href="https://github.com/playframework/playframework">Play
-									Wiki</a>in Github, that improve developer productivity.</li>
+									Wiki </a>on Github, that improve developer productivity.</li>
                 </ul>
               </li>
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Reactive applications - With Scala, one can develop powerful asynchronous
                 and non-blocking programs for handling streams of data in Web applications.
                 Play provides the
-                <em>Iteratees</em>and
-                <em>Enumerator/Enumeratees</em>construct for consuming and producing data
+                Iteratees and
+                Enumerator/Enumeratees construct for consuming and producing data
                 respectively. They are based on the functional programming paradigm of
                 Scala and are far more expressive for developing reactive applications
                 compared to other web frameworks. Play uses WebSockets to establish bi-directional
                 connection between client and server. I would suggest going through the
                 book
-                <em>Scala For Java Developers</em>to get a good understanding of Iteratees
+                Scala For Java Developers to get a good understanding of Iteratees
                 and Enumerators.</li>
             </ul>
-            <p></p>
-            <hr>
-            <strong>
-              <h4>Why should I not use Play</h4>
-            </strong>
-            <p></p>
+            <h4>Why should I not use Play</h4>
             <ul class="fa-ul">
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Although the current version of Play - 2.4.3 is stable, Play as a
@@ -181,13 +162,8 @@
                 </ul>
               </li>
             </ul>
-            <p></p>
-            <p></p>
-            <br>Let's get started!
             <hr>
-            <p></p>
-            <h3>Install and Setup Play</h3>
-            <hr>
+            <u><h3>Install and Setup Play</h3></u>
             <strong>Note: Java 8 (JDK 1.8 and above) is required for developing Play 2.4+
               applications.</strong>
             <br>Getting started with the Play framework is fairly simple and straightforward.
@@ -199,7 +175,7 @@
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Setup and configure the Java environment (JDK 1.7/JDK 1.8). Refer
                 this
-                <a href="">link</a>for more details on this step.
+                <a href=""> link </a>for more details on this step.
                 <img src="assets/images/install1.png" class="img-responsive img-thumbnail">
               </li>
               <li>
@@ -225,10 +201,8 @@
             <br>For more details on installing, refer the official documentation
             <a href="https://www.playframework.com/documentation/2.4.x/Installing">Installing
 					Play</a>.
-            <p></p>
-            <hr>
-            <h3>Creating a Play application</h3>
-            <hr>
+          <hr>
+            <u><h3>Creating a Play application</h3></u>
             <p>Before creating a new Play application, make sure that you have configured
               and setup the Play framework. Test the setup by running
               <strong>
@@ -238,21 +212,23 @@
               <br>To create a Play 2.4 application</p>
             <ul class="fa-ul">
               <li class="spacedList"><i class="fa-li fa -square fa-chevron-circle-right"></i>Change directory to the location where you want to create the new project
-                and use the activator command.
+                and use the activator command.<br>
+                The home directory for this newly created project is
+                <em>&lt;path to workspace&gt;/&lt;project name&gt;</em>
+                <br>
+                Template field is optional and can be used to initialize the Play project
+                with basic files and configuration according to the template.
+                <br>
+                <br>The following commands initialize a Play Java project named
+                Sample-Java-App.
+                <br>
                 <br>
                 <code>cd &lt;path to workspace&gt;</code>
                 <br>
                 <code>activator new &lt;project name&gt; [&lt;template&gt;]</code>
-                <br>The home directory for this newly created project is
-                <em>&lt;path to workspace&gt;/&lt;project name&gt;</em>
-                <br>Template field is optional and can be used to initialize the Play project
-                with basic files and configuration according to the template.
-                <br>For example, the following command initializes a Play Java project named
-                Sample-Java-App.
                 <br>
-                <strong>
-                  <code>activator new Sample-Java-App play-java</code>
-                </strong>
+                <code>activator new Sample-Java-App play-java</code>
+
                 <br>
                 <br>
                 <img src="assets/images/create1.png" class="img-responsive img-thumbnail">
@@ -266,7 +242,7 @@
                 on localhost, port 9000.
                 <br>
                 <br>To verify go to
-                <em>localhost:9000</em>on your web browser and you should see the Play welcome
+                <em> localhost:9000 </em>on your web browser and you should see the Play welcome
                 page.
                 <br>
                 <br>
@@ -275,15 +251,17 @@
               </li>
               <li class="spacedList"><i class="fa-li fa -square fa-chevron-circle-right"></i>Play provides easy integration with Eclipse and Idea.
                 <br>Firstly add the Eclipse/Idea plugin to the
-                <strong>project/plugins.sbt</strong>file,
-                <code>addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")</code>and
+                <strong> project/plugins.sbt </strong>file,
+                <br>
+                <code>addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")</code> <br>and
                 compile your project using
                 <code>activator compile</code>.
                 <br>
                 <br>
                 <img src="assets/images/create3.png" class="img-responsive img-thumbnail">
                 <br>
-                <br>Then, to open the newly created Play application as an Eclipse project
+              </li>
+              <li class="spacedList"><i class="fa-li fa -square fa-chevron-circle-right"></i> Then, to open the newly created Play application as an Eclipse project
                 run
                 <strong>
                   <code>activator eclipse</code>
@@ -298,8 +276,7 @@
               </li>
             </ul>
             <hr>
-            <p></p>
-            <h3>Links for further reading</h3>
+            <u><h3>Links for further reading</h3></u>
             <ul class="fa-ul">
               <li>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>
@@ -331,8 +308,6 @@
 							Ebook</a>
               </li>
             </ul>
-            <p></p>
-            <hr>
           </div>
         </div>
       </div>
