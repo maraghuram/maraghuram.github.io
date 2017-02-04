@@ -1294,6 +1294,8 @@ h6,
 }
 p {
   margin: 0 0 10px;
+  font-size: large;
+}
 }
 .lead {
   margin-bottom: 20px;
@@ -1530,10 +1532,10 @@ samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 code {
-  padding: 2px 4px;
+  padding: 0px 4px;
   font-size: 90%;
-  color: #c7254e;
-  background-color: #f9f2f4;
+  color: white;
+  background-color: #878787;
   border-radius: 4px;
 }
 kbd {
@@ -6777,3 +6779,9 @@ body {
   background-attachment: fixed;
 }
 /* PINGENDO COMMENT DO NOT REMOVE */
+
+
+.spacedList {
+    margin-top: 5px;
+    padding-top: 10px;
+}
