@@ -1524,7 +1524,7 @@ address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.42857143;
-}
+}7
 code,
 kbd,
 pre,
@@ -6784,4 +6784,19 @@ body {
 .spacedList {
     margin-top: 5px;
     padding-top: 10px;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+a:hover {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+a:visited {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }

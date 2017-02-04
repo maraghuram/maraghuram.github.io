@@ -1,0 +1,410 @@
+<html><head>
+    <title>Play! Framework, maraghuram.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/my-style.css" rel="stylesheet" type="text/css">
+  </head><body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span> maraghuram.github.io</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right" draggable="true">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about-me.html">About Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section" style="background-color: #76767b;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="page-header" style="color: #FFFFFF;">
+              <h1>Play! Framework For Dummies</h1>
+              <p>Raghuram M A | November 2015</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h2 align="center">Introduction
+            <small>What, Why and How</small>
+          </h2>
+          <p>The
+            <a href="http://playframework.com/">Play Framework </a>is an open source lightweight framework for developing
+            <strong>Java</strong>and
+            <strong>Scala</strong>web applications based on the Model View Controller (MVC)
+            architecture. It was created by Guillaume Bort while working at Zenexity
+            and the intial release of Play, 1.0 was released in 2007. After a complete
+            re-write of Play APIs to Scala, Play 2.0 was released in 2012 in conjuction
+            with
+            <a href="http://typesafe.com/"> Typesafe </a>stack. Currently, Typesafe provides
+            <a href="https://www.typesafe.com/community/core-projects/play-framework">commercial
+						support </a>for the stable version of Play which is Play 2.4.3.</p>
+          <p>Play follows a stateless, multi-threaded, fully asynchronous web architecture
+            which enables high-scalability for web applications. It is also developer
+            friendly - supports hot deployment(hit refresh workflow), easy error handling,
+            built-in testing, integration with IDE eclipse/idea. Play also supports
+            <a href="https://en.wikipedia.org/wiki/Type_safety">Type safety</a>as Scala and Java are inherently type safe languages. Another
+              important aspect of Play, that is not often emphasized on, is that you
+              can also develop
+              <a href="http://www.reactivemanifesto.org/">Reactive
+						web applications </a>using Play.</p>
+          <u>
+            <h4>Core Components</h4>
+          </u>
+          <ul class="fa-ul">
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://netty.io/">JBoss Netty Web Server</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://akka.io">Akka Framework</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://www.scala-sbt.org/">SBT Build System </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="https://www.playframework.com/documentation/2.0/ScalaTemplates">Scala
+							Templating Engine</a>
+              </p>
+            </li>
+          </ul>
+          <br>
+          <u>
+            <h4>Play Advantages</h4>
+          </u>
+          <ul class="fa-ul">
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Play is stateless (and so is the Web). This means that the framework
+                itself will not store any information between user's requests. Along with
+                its fully asynchronous capabilities, Play can scale predictably for large
+                applications. If the application requires information persistence, then
+                it should make use of a database or use cookies or a memory-cache.
+                <br>
+                <a href="http://blog.lunatech.com/2012/03/22/jfokus-2012-playframework-video">"Don't break the first two buttons in a browser"- Reload and Back buttons (Peter Hilton)</a>
+              </p>
+            </li>
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Positive developer experience by simplifying some of the most common
+                application development steps,</p>
+              <ul class="fa-ul">
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Hot deploy(hit refresh workflow) - Solves one of the most annoying
+                  problems related to developing Java web applications. Although it still
+                  takes some time to build and compile, it is taken care automatically by
+                  the framework itself. Additionally SBT's
+                  <em>incremental build approach</em>also reduces the build/compile time.</li>
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Error Handling and Logging - Errors are thrown on the webpage along
+                  with detailed explanation so that you don't have to open up server/application
+                  logs and scan through them. Also, logging(using Logback) in Play applications
+                  is automatically configured when the application is created (conf/logback.xml).</li>
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Inbuilt testing - To test your application, simply add application
+                  test files under the test directory in your project and then run the tests
+                  from the console using
+                  <em>test</em>and
+                  <em>test-only</em>commands.</li>
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Easy integration with Eclipse/Idea, and a bunch of other modules that
+                  can be found on the
+                  <a href="https://github.com/playframework/playframework">Play
+									Wiki </a>on Github, that improve developer productivity.</li>
+              </ul>
+            </li>
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Reactive applications - With Scala, one can develop powerful asynchronous
+                and non-blocking programs for handling streams of data in Web applications.
+                Play provides the Iteratees and Enumerator/Enumeratees construct for consuming
+                and producing data respectively. They are based on the functional programming
+                paradigm of Scala and are far more expressive for developing reactive applications
+                compared to other web frameworks. Play uses WebSockets to establish bi-directional
+                connection between client and server. I would suggest going through the
+                book Scala For Java Developers to get a good understanding of Iteratees
+                and Enumerators.</p>
+            </li>
+            <p></p>
+          </ul>
+          <br>
+          <u>
+            <h4>Why should I not use Play</h4>
+          </u>
+          <ul class="fa-ul">
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Although the current version of Play - 2.4.3 is stable, Play as a
+                framework is not mature enough with lots of development activity in progress
+                and version changes that are not backwards compatible.</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Deploying your Play application is not an easy task (I will write
+                a tutorial on this in some time) and there are limited deployment options
+                like Heroku, Cloudbees.</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Play documentation is really good, but apart from that, there are
+                only a handful of tutorials.</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Steep learning curve to understand the framework before getting started
+                with development.</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Other cases when you want to avoid using Play are</p>
+              <ul class="fa-ul">
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Small projects/ Quick hacks (which are not getting complex)</li>
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Small teams - Application maintenance is not your objective.</li>
+                <li>
+                  <i class="fa-li fa -square -square fa-minus"></i>Application is primarily I/O bound and not much CPU intensive.</li>
+              </ul>
+              <p></p>
+            </li>
+          </ul>
+          <hr>
+          <u>
+            <h3>Install and Setup Play</h3>
+          </u>
+          <strong>Note: Java 8 (JDK 1.8 and above) is required for developing Play 2.4+
+            applications.</strong>
+          <br>
+          <p>Getting started with the Play framework is fairly simple and straightforward.
+            Play 2.3 and above are bundled along with
+            <a href="https://www.typesafe.com/products/typesafe-reactive-platform"></a>which provides a nice UI for compiling, testing and running Play applications.</p>
+          <br>
+          <ul class="fa-ul">
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Setup and configure the Java environment (JDK 1.7/JDK 1.8). Refer
+                this
+                <a href=""> link </a>for more details on this step.
+                <img src="assets/images/install1.png" class="img-responsive img-thumbnail">
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Download latest version of Play with Activator
+                <a href="https://downloads.typesafe.com/typesafe-activator/1.3.6/typesafe-activator-1.3.6.zip">Play
+							2.4.3 "Damiya" </a>and extract the zip file.</p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Add the Activator executables to your system PATH.</p>
+            </li>
+          </ul>
+          <p>
+            <strong>
+              <code>tar -xvf typesafe-activator-1.3.6.zip</code>
+            </strong>
+            <br>
+            <strong>
+              <code>export PATH=/&lt;path to activator&gt;/typesafe-activator-1.3.6/bin:$PATH</code>
+            </strong>
+            <br>
+            <strong>Now you are ready to develop Play 2.4 applications!</strong>For more details
+            on installing, refer the official documentation
+            <a href="https://www.playframework.com/documentation/2.4.x/Installing">Installing
+					Play</a>.</p>
+          <hr>
+          <u>
+            <h3>Creating a Play application</h3>
+          </u>
+          <p>Before creating a new Play application, make sure that you have configured
+            and setup the Play framework. Test the setup by running
+            <strong>
+              <code>activator ui</code>
+            </strong>from any directory in the terminal and it should open up the local instance
+            of activator on the browser.</p>
+          <ul class="fa-ul">
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Change directory to the location where you want to create the new
+                project and use the activator command.
+                <br>The home directory for this newly created project is
+                <em>&lt;path to workspace&gt;/&lt;project name&gt;</em>
+                <br>Template field is optional and can be used to initialize the Play project
+                with basic files and configuration according to the template.
+                <br>The following commands initialize a Play Java project named Sample-Java-App.
+                <br>
+                <br>
+                <strong>
+                  <code>cd &lt;path to workspace&gt;</code>
+                </strong>
+                <br>
+                <strong>
+                  <code>activator new &lt;project name&gt; [&lt;template&gt;]</code>
+                </strong>
+                <br>
+                <strong>
+                  <code>activator new Sample-Java-App play-java</code>
+                </strong>
+                <br>
+                <br>
+                <img src="assets/images/create1.png" class="img-responsive img-thumbnail">
+              </p>
+            </li>
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Type
+                <strong>
+                  <code>activator run</code>
+                </strong>from the project home directory and if everything went well, you should
+                see the project compiling successfully and has started listening by default
+                on localhost, port 9000. To verify go to
+                <u>
+                  <strong>localhost:9000</strong>
+                </u>on your web browser and you should see the Play welcome page.
+                <br>
+                <br>
+                <img src="assets/images/create2.png" class="img-responsive img-thumbnail">
+              </p>
+            </li>
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Play provides easy integration with Eclipse and Idea. Add the Eclipse/Idea
+                plugin to
+                <strong>project/plugins.sbt</strong>file, and compile your project.
+                <br>
+                <strong>
+                  <code>addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")</code>
+                </strong>
+                <br>
+                <strong>
+                  <code>activator compile</code>
+                </strong>.
+                <br>
+                <br>
+                <img src="assets/images/create3.png" class="img-responsive img-thumbnail">
+              </p>
+            </li>
+            <br>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>To open a newly created Play application as an Eclipse project run
+                <strong>
+                  <code>activator eclipse</code>
+                </strong>from the project home.
+                <br>
+                <br>
+                <img src="assets/images/create4.png" class="img-responsive img-thumbnail">
+                <br>
+                <br>Import as an existing project.
+                <br>
+                <br>
+                <img src="assets/images/create6.png" class="img-responsive img-thumbnail">
+              </p>
+            </li>
+          </ul>
+          <u>
+            <h3>References</h3>
+          </u>
+          <ul class="fa-ul">
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://www.slideshare.net/areelsen/introduction-playframework">http://www.slideshare.net/areelsen/introduction-playframework</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/">http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="https://www.playframework.com/documentation/2.4.x/Enumeratees">https://www.playframework.com/documentation/2.4.x/Enumeratees</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://rahulrav.svbtle.com/an-introduction-to-iteratees-with-the-play-framework">http://rahulrav.svbtle.com/an-introduction-to-iteratees-with-the-play-framework</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://www.ybrikman.com/writing/2013/11/24/play-scala-and-iteratees-vs-nodejs/">http://www.ybrikman.com/writing/2013/11/24/play-scala-and-iteratees-vs-nodejs/</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                <a href="http://www.ybrikman.com/writing/2014/09/29/nodejs-vs-play-framework/">http://www.ybrikman.com/writing/2014/09/29/nodejs-vs-play-framework/</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>Book - Scala For Java Developers By Thomas Alexandre
+                <a href="https://books.google.co.in/books/about/Scala_for_Java_Developers.html?id=W0O7oAEACAAJ&amp;hl=en">Google
+							Ebook</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+    <footer class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="text-center">©2017 Raghuram M A &nbsp;| &nbsp;
+              <small style="color: #FFFFFF;">Designed using
+                <a href="http://pingendo.com/" style="color: #FFFFFF;">Pingendo</a>
+              </small>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+
+</body></html>
