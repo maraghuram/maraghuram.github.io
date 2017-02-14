@@ -1,0 +1,238 @@
+<html><head>
+    <title>Solving SPOJ ACPC10G, maraghuram.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/my-style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/my-style-custom.css" rel="stylesheet" type="text/css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+  </head><body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span> maraghuram.github.io</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right" draggable="true">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about-me.html">About Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section" style="background-color: #76767b;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="page-header" style="color: #FFFFFF;">
+              <h1>Solving SPOJ ACPC10G</h1>
+              <p>Raghuram M A | February 2017</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h2 align="center">SPOJ ACPC10G
+            <small>The Problem</small>
+          </h2>
+          <p>
+          </p><blockquote class="blockquote1">
+          There are N knights and N points on an infinite chessboard. Each knight should occupy exactly one of the points. The knight's moves are the same chess moves (L shaped). What is the minimum number of moves required by all the knights?
+          <br> Note, the problem states that more than one knight can occupy a single cell while trying to reach its final destination.
+          <br> 1 ≤ N ≤ 15
+          <br><u><a href="http://www.spoj.com/problems/ACPC10G/">Click here for complete problem description</a></u>
+          </blockquote>
+          <p></p>
+          <p>
+            Let $ X = { X_1, X_2, ... X_N} $ denote an arrangement of knights and $ Y = { Y_1, Y_2, ... Y_N} $ a corresponding set of points such that the knight X<sub>i</sub> occupies the point Y<sub>i</sub>.
+            <br> The cost of such an arrangment is $ Cost(X,Y) = \sum_{i=1}^N   KnightCost(X_i,\;Y_i) $ .
+            <br> This problem asks to find the minimum such value of $ Cost(X,Y) $.
+            <br> Finally, the additional note is hinting that each knight can be positioned independent of other knights.
+          </p>
+          <hr>
+          <p>
+            I stumbled across this problem while looking at the wonderful <a href="http://zobayer.blogspot.in/2015/06/dynamic-programming-dp-problems-from.html">collection of dynamic programming problems by Zobayer</a>. So, I know this problem has a DP solution, but let's say I didn't know that.
+            <strong>Then, how to find out if a problem has a DP solution and solve it? </strong>
+            <br> It is useful to check for these characteristics <small>- Not necessary for every DP problem though</small>
+            <blockquote>
+            <ul class="fa-ul">
+              <li>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                The first solution one can think of (brute-force method) results in an exponential/intractable problem space
+              </li>
+              <li>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                Unusual limits/Low problem constraints, but would still TLE for brute-force solutions
+              </li>
+              <li>
+                <i class="fa-li fa -square fa-chevron-circle-right"></i>
+                The problem repeats itself in a smaller problem space (sub-problems)
+                <ul class="fa-ul">
+                  <li>
+                    <i class="fa-li fa -square -square fa-minus"></i>An optimal solution to the problem can be derived from a finite number of sub-problems
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            </blockquote>
+          </p>
+
+          Let's try to apply them one by one
+          <p>
+          <ol>
+            <li>
+              <p>
+                The simplest solution would be to generate every permutation of the knight-point matching and calculate the total cost for each permutation. The minimum of these is the answer.
+                <br> Complexity of such a solution: O(N!),
+                <br><u> Naive brute-force methods result in an intractable problem space </u> <i class="fa fa-lg fa-check fa-fw"></i>
+              </p>
+            </li>
+            <li>
+              <p>
+                Complexity of brute-force solution translates to atleast <strong>15! (1307674368000)</strong> operations for the given problem. This would definitely exceed the <strong>0.14s</strong> time limit on the SPOJ Cube cluster.
+                <br>If you are not sure on time limits and estimating operations based on algorithmic complexity, you should look at them before starting on any problem. There are a number of resources on the internet for different platforms (<a href="https://discuss.codechef.com/questions/1544/how-many-approx-loops-are-allowed-in-1-sec-lime-limit">Codechef</a>, <a href="https://apps.topcoder.com/forums/?module=Thread&threadID=706024&start=0&mc=7#1365976">Topcoder</a>, <a href="http://codeforces.com/blog/entry/4825">Codeforces</a>, <a href="https://www.quora.com/Every-time-I-try-to-solve-problem-on-CodeChef-or-SPOJ-I-get-the-error-of-time-limit-exceeded-What-should-I-do-Am-I-lacking-in-algorithms">Spoj</a>).
+                <a href="http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf#page=17">This book on Competitive Programming by Steven Halim</a> has an entire section on Algorithm Analysis.
+                <br><u> Even though the limits are unusually low (N &le; 15), the brute force solution is not enough. </u><i class="fa fa-lg fa-check fa-fw"></i>
+              </p>
+            </li>
+            <li>
+                <p>
+                  The hardest question: Does this problem repeat itself with a smaller problem space?
+                  Thinking in terms of permutations doesn't help in reducing the problem since the permutations are independent of each other
+
+                  <p>Again, Let $ X = \{ X_1, X_2, ... X_N\} $ denote the knights and $ Y = \{Y_1, Y_2, .. Y_N\} $ denote the points. $ MinCost(X, Y) $ denotes the minimum sum of cost for matching these knights and points.
+                  <br>Let's say we match a knight $ X_i $ and position $ Y_j $ that the knight needs to occupy. This would mean a cost of $ KnightCost(X_i, Y_j) $ and then again we are left with a set of $ N - 1 $ knights and points that need to be matched with minimum sum of costs!
+                  </p>
+                  <p>
+                    In other words, when $ X_i $ is matched with $ Y_j $, $ MinCost(X, Y) = KnightCost(X_i, Y_j) + MinCost(X-\{X_i\}, Y-\{Y_j\}) $
+                  </p>
+
+                  <u>So, the problem definitely has a repeating structure. </u><i class="fa fa-lg fa-check fa-fw"></i>
+                </p>
+            </li>
+            <li>
+              <p>
+                  We still don't have a solution- to find out the minimum cost for N knights and points. So let's try to formalize the base cases and recursive structure for the problem.
+
+                  $$ MinCost[N][Y] =
+                  minimum \{ ( KnightCost(N,j) + MinCost[N-1][Y-\{j\}] ) \; \forall j \; \in Y \}
+                  $$
+
+                  Base cases simply match $ X_1 $ with every point ($ size(Y) = 1 $)
+                  $$  MinCost[1][\{Y_1\}] = KnightCost(1, 1) \\
+                      MinCost[1][\{Y_2\}] = KnightCost(1, 2) \\
+                      ..
+                  $$
+                  Therefore, the optimal solution can be dervived from at most $ N $ sub-problems. </u><i class="fa fa-lg fa-check fa-fw"></i>
+              </p>
+            </li>
+          </ol>
+          </p>
+          <hr>
+          <p>
+            <u><h4> Complexity Analysis: </h4></u>
+            Using bitmasks to represent the subsets of $ Y $,
+            Memory limits: $ O(N \cdot 2^N) $
+            <br><strong> Time Limit: </strong>
+            <ul style="list-style: none;">
+            <li> The dp state space consists of $ O(N \cdot 2^N) $ states </li>
+            <li> Cost to compute the optimal solution for every state $ O(N) $ </li>
+            <li> Therefore, total time complexity: $ O(N^2 \cdot 2^N) $ </li>
+            </ul>
+
+          </p>
+          <hr>
+          <p>
+            <u><h4> Final Notes and Implementation: </h4></u>
+            <p>
+            <ul class="fa-ul spacedList">
+              <li><i class="fa-li fa -square fa-chevron-circle-right"></i> No. of operations based on the worst case time complexity: ($ 15 \cdot 15 \cdot {2}^{15} $) ~ 7 million operations</li>
+              <li> <i class="fa-li fa -square fa-chevron-circle-right"></i> An important assumption here is that <strong>knight distance between two points X, Y </strong> can be computed quickly. <a href="http://stackoverflow.com/questions/2339101/knights-shortest-path-chess-question">This is also a well known topic and I won't be solving it here.</a></li>
+              <li> <i class="fa-li fa -square fa-chevron-circle-right"></i> $ O(N^2 \cdot 2^N) $ is actually quite close to the Time Limit. A couple of tips while implementing,
+                <ul>
+                  <li>Think of how you can retrieve knight-point distances in O(1) for DP</li>
+                  <li>$ O(N^2 \cdot 2^N \cdot T) $ where T is number of test cases is definitely TLE!</li>
+                </ul>
+              <li> <i class="fa-li fa -square fa-chevron-circle-right"></i> <u> Source Code: </u>
+                  <p>
+                   <style type="text/css">
+                    .gist {/*width:500px !important;*/}
+                    .gist-file
+                    .gist-data {max-height: 500px;/*max-width: 500px;*/}
+                   </style>
+                  <script src="https://gist.github.com/maraghuram/a5e1238baf1a89c5fef9f675866d6ab6.js"></script>
+                  </p>
+              </li>
+            </ul>
+            </p>
+
+          </p>
+          <p>
+          If you have any questions or comments, feel free to leave them below.
+          <h4> Happy Practicing! </h4>
+          </p>
+
+          <div id="disqus_thread"></div>
+          <script>
+
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+          var disqus_config = function () {
+          this.page.url = 'maraghuram.github.io/solving-spoj-acpc10g.html';  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = 'solving-spoj-acpc10g'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//maraghuram-github-io.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+    <footer class="section section-primary" id="footerId">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="text-center">©2017 Raghuram M A &nbsp;| &nbsp;
+              <small style="color: #FFFFFF;">Designed using
+                <a href="http://pingendo.com/" style="color: #FFFFFF;">Pingendo</a>
+              </small>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<script id="dsq-count-scr" src="//maraghuram-github-io.disqus.com/count.js" async></script>
+</body></html>
