@@ -10,7 +10,10 @@
     <link href="assets/css/my-style-custom.css" rel="stylesheet" type="text/css">
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        CommonHTML: {
+          scale: 85
+        }
       });
     </script>
   </head><body>
@@ -125,7 +128,7 @@
                   <br>Let's say we match a knight $ X_i $ and position $ Y_j $ that the knight needs to occupy. This would mean a cost of $ KnightCost(X_i, Y_j) $ and then again we are left with a set of $ N - 1 $ knights and points that need to be matched with minimum sum of costs!
                   </p>
                   <p>
-                    In other words, when $ X_i $ is matched with $ Y_j $, $ MinCost(X, Y) = KnightCost(X_i, Y_j) + MinCost(X-\{X_i\}, Y-\{Y_j\}) $
+                    In other words, when $ X_i $ is matched with $ Y_j $, $$ MinCost(X, Y) = KnightCost(X_i, Y_j) + MinCost(X-\{X_i\}, Y-\{Y_j\}) $$
                   </p>
 
                   <u>So, the problem definitely has a repeating structure. </u><i class="fa fa-lg fa-check fa-fw"></i>
@@ -173,8 +176,9 @@
                 <ul>
                   <li>Think of how you can retrieve knight-point distances in O(1) for DP</li>
                   <li>$ O(N^2 \cdot 2^N \cdot T) $ where T is number of test cases is definitely TLE!</li>
-                </ul>
-              <li> <i class="fa-li fa -square fa-chevron-circle-right"></i> <u> Source Code: </u>
+                </ul>              
+            </ul>
+            <p>C++ Implementation: <i class="fa fa-lg fa-fw fa-code"></i>
                   <p>
                    <style type="text/css">
                     .gist {/*width:500px !important;*/}
@@ -183,8 +187,7 @@
                    </style>
                   <script src="https://gist.github.com/maraghuram/a5e1238baf1a89c5fef9f675866d6ab6.js"></script>
                   </p>
-              </li>
-            </ul>
+                </p>
             </p>
 
           </p>
