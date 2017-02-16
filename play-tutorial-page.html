@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=sh&amp;skin=sunburst"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/my-style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/my-style-custom.css" rel="stylesheet" type="text/css">
@@ -235,15 +236,8 @@
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Add the Activator executables to your system PATH.</p>
             </li>
           </ul>
-          <p>
-            <strong>
-              <code>tar -xvf typesafe-activator-1.3.6.zip</code>
-            </strong>
-            <br>
-            <strong>
-              <code>export PATH=/&lt;path to activator&gt;/typesafe-activator-1.3.6/bin:$PATH</code>
-            </strong>
-            <br>
+          <pre class="prettyprint">tar -xvf typesafe-activator-1.3.6.zip;<br>export PATH=/&lt;path to activator&gt;/typesafe-activator-1.3.6/bin:$PATH</pre>
+          <p>           
             <strong>Now you are ready to develop Play 2.4 applications!</strong>For more details
             on installing, refer the official documentation
             <a href="https://www.playframework.com/documentation/2.4.x/Installing">Installing
@@ -253,10 +247,8 @@
             <h3>Creating a Play application</h3>
           </u>
           <p>Before creating a new Play application, make sure that you have configured
-            and setup the Play framework. Test the setup by running
-            <strong>
-              <code>activator ui</code>
-            </strong>from any directory in the terminal and it should open up the local instance
+            and setup the Play framework. Test the setup by running <pre class="prettyprint">activator ui</pre>
+            from any directory in the terminal and it should open up the local instance
             of activator on the browser.</p>
           <ul class="fa-ul">
             <br>
@@ -269,21 +261,7 @@
                 <br>Template field is optional and can be used to initialize the Play project
                 with basic files and configuration according to the template.
                 <br>The following commands initialize a Play Java project named Sample-Java-App.
-                <br>
-                <br>
-                <strong>
-                  <code>cd &lt;path to workspace&gt;</code>
-                </strong>
-                <br>
-                <strong>
-                  <code>activator new &lt;project name&gt; [&lt;template&gt;]</code>
-                </strong>
-                <br>
-                <strong>
-                  <code>activator new Sample-Java-App play-java</code>
-                </strong>
-                <br>
-                <br>
+                <pre class="prettyprint">cd &lt;path to workspace&gt;<br>activator new &lt;project name&gt; [&lt;template&gt;]<br>activator new Sample-Java-App play-java</pre>
                 <img src="assets/images/create1.png" class="img-responsive img-thumbnail">
               </p>
             </li>
@@ -291,10 +269,8 @@
             <li>
               <p>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Type
-                <strong>
-                  <code>activator run</code>
-                </strong>from the project home directory and if everything went well, you should
-                see the project compiling successfully and has started listening by default
+                <pre class="prettyprint">activator run</pre> from the project home directory and if everything went well, you should
+                see the project compiling successfully and listening by default
                 on localhost, port 9000. To verify go to
                 <u>
                   <strong>localhost:9000</strong>
@@ -309,17 +285,8 @@
               <p>
                 <i class="fa-li fa -square fa-chevron-circle-right"></i>Play provides easy integration with Eclipse and Idea. Add the Eclipse/Idea
                 plugin to
-                <strong>project/plugins.sbt</strong>file, and compile your project.
-                <br>
-                <strong>
-                  <code>addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")</code>
-                </strong>
-                <br>
-                <strong>
-                  <code>activator compile</code>
-                </strong>.
-                <br>
-                <br>
+                <strong>project/plugins.sbt </strong>file, and compile your project.
+                <pre class="prettyprint">addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")<br>activator compile</pre>
                 <img src="assets/images/create3.png" class="img-responsive img-thumbnail">
               </p>
             </li>
